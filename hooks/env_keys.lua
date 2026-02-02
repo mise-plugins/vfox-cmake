@@ -5,15 +5,13 @@
 --- @field ctx.path string SDK installation directory
 function PLUGIN:EnvKeys(ctx)
     local mainPath = ctx.path
-    if RUNTIME.osType=="darwin" then
-        mainPath = mainPath.."/CMake.app/Contents"
+    if RUNTIME.osType == "darwin" then
+        mainPath = mainPath .. "/CMake.app/Contents"
     end
     return {
         {
             key = "PATH",
-            value = mainPath .. "/bin"
-        }
-
+            value = mainPath .. "/bin",
+        },
     }
-
 end
